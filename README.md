@@ -10,5 +10,7 @@ test.dll仅用于测试dll注入是否成功,主要功能就是弹个messagebox
 1.获取进程句柄  
 2.VirtualAllocEx后WriteProcessMemory，把dll名称写入目标文件  
 3.CreateRemoteThread 线程函数为LoadLibraryW，参数为 VirtualAllocEx返回值，即dll名称地址  
+## 注册表注入(win10 AppInit_Dlls被限制，代码模板就不写了//摸)  
+只要dll绝对路径位于注册表windows就会让加载了USER32.dll的进程自动加载该进程//dll注册表项记得改为1  
 
 //to do
