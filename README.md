@@ -1,5 +1,6 @@
 # dll_injection  
 环境:win10 vs2019  
+test.dll仅用于测试dll注入是否成功,主要功能就是弹个messagebox  
 ## 导入表注入(过于基础)  
 对pe结构略微了解即可知道原理
 就和新增节一样，新增一个导入表  
