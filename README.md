@@ -19,4 +19,7 @@ test.dll仅用于测试dll注入是否成功,主要功能就是弹个messagebox
 只要dll绝对路径位于注册表windows就会让加载了USER32.dll的进程自动加载该进程//dll注册表项记得改为1  
 ## Process Hollowing  
 见pe_shell decode.c代码  
+## code-inject  
+实习时写的，需要检测进程并把shellcode注入到某进程中  
+其实就是整合一下之前写过的代码，稍微改动些  
 //to do  
