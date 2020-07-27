@@ -19,7 +19,7 @@ int _tmain(int argc, TCHAR* argv[]) {
 		exit(0);
 	}
 
-	namebuffer = VirtualAllocEx(p, NULL, size, MEM_COMMIT, PAGE_READWRITE); //分配空间
+	namebuffer = VirtualAllocEx(p, NULL, size, MEM_COMMIT, PAGE_EXECUTE_READWRITE); //分配空间
 
 	WriteProcessMemory(p, namebuffer, (LPVOID)argv[2], size, NULL);			//写入dll name
 
